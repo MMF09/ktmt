@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Giáo trình kiến trúc máy tính hiện đại: từ logic số, RISC-V, pipeline, bộ nhớ đến GPU, bảo mật và hệ thống đa lõi."
+    />
+    <meta name="theme-color" content="#f6f7f4" />
+    <title>Kiến trúc máy tính hiện đại — Lộ trình học tập</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="curriculum.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar">
+        <a class="brand" href="#home" aria-label="Trang chủ giáo trình">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none">
+              <path d="M7 9.5h18v13H7z" stroke="currentColor" stroke-width="1.7" />
+              <path d="M11 13h3v3h-3zm7 0h3v3h-3zm-7 5h10" stroke="currentColor" stroke-width="1.5" />
+              <path d="M12 5v4m8-4v4M12 23v4m8-4v4M3 13h4m18 0h4M3 19h4m18 0h4" stroke="currentColor" stroke-width="1.5" />
+            </svg>
+          </span>
+          <span class="brand-copy">
+            <strong>ARCH<span>LAB</span></strong>
+            <small>LEARNING STUDIO</small>
+          </span>
+        </a>
+
+        <div class="sidebar-label">KHÔNG GIAN HỌC TẬP</div>
+        <nav class="side-nav" aria-label="Điều hướng chính">
+          <a class="nav-link active" href="#home">
+            <span class="nav-icon">⌂</span> Tổng quan
+          </a>
+          <a class="nav-link" href="#curriculum">
+            <span class="nav-icon">▤</span> Giáo trình
+            <span class="nav-count" id="module-count">12</span>
+          </a>
+          <a class="nav-link" href="#roadmap">
+            <span class="nav-icon">⌁</span> Lộ trình
+          </a>
+          <a class="nav-link" href="#resources">
+            <span class="nav-icon">↗</span> Tài nguyên
+          </a>
+        </nav>
+
+        <div class="sidebar-label section-label">TIẾN ĐỘ CỦA BẠN</div>
+        <div class="sidebar-progress">
+          <div class="progress-top">
+            <span>Hoàn thành</span>
+            <strong id="sidebar-progress-label">0%</strong>
+          </div>
+          <div class="progress-track"><span id="sidebar-progress-bar"></span></div>
+          <p id="sidebar-progress-note">Bắt đầu hành trình của bạn</p>
+        </div>
+
+        <div class="sidebar-bottom">
+          <div class="sidebar-note">
+            <span class="note-spark">✳</span>
+            <p><strong>Học theo cách của bạn.</strong><br />Mọi tiến độ được lưu trên thiết bị này.</p>
+          </div>
+          <div class="profile">
+            <div class="avatar">A</div>
+            <div><strong>Người học</strong><small>Kiến trúc máy tính</small></div>
+            <span class="profile-menu">···</span>
+          </div>
+        </div>
+      </aside>
+
+      <main class="main-content" id="home">
+        <header class="topbar">
+          <button class="menu-button" id="menu-button" aria-label="Mở menu" aria-expanded="false">☰</button>
+          <div class="breadcrumb"><span>Không gian học tập</span><span class="crumb-sep">/</span><strong>Tổng quan</strong></div>
+          <div class="topbar-actions">
+            <span class="course-status"><span></span> GIÁO TRÌNH MỞ</span>
+            <button class="icon-button" id="theme-button" aria-label="Đổi giao diện" title="Đổi giao diện">◐</button>
+          </div>
+        </header>
+
+        <section class="page-wrap">
+          <section class="hero" aria-labelledby="page-title">
+            <div class="hero-content">
+              <div class="eyebrow"><span class="eyebrow-line"></span> COMPUTER ARCHITECTURE · 2025—2026</div>
+              <h1 id="page-title">Hiểu cỗ máy.<br /><span>Kiến tạo tương lai.</span></h1>
+              <p class="hero-description">
+                Một lộ trình có hệ thống từ transistor đến trung tâm dữ liệu — khám phá cách phần cứng và phần mềm cùng định hình thế giới số.
+              </p>
+              <div class="hero-actions">
+                <a class="button button-primary" href="#curriculum">Khám phá giáo trình <span>↘</span></a>
+                <a class="button button-quiet" href="#roadmap">Xem lộ trình <span>→</span></a>
+              </div>
+              <div class="hero-meta">
+                <div class="meta-avatars" aria-hidden="true"><span>A</span><span>R</span><span>+</span></div>
+                <span>Thiết kế cho người học công nghệ</span>
+                <span class="meta-divider"></span>
+                <span>12 mô-đun · 1 đồ án</span>
+              </div>
+            </div>
+            <div class="hero-art" aria-hidden="true">
+              <div class="art-orbit orbit-one"></div>
+              <div class="art-orbit orbit-two"></div>
+              <div class="art-orbit orbit-three"></div>
+              <div class="chip">
+                <div class="chip-inner">
+                  <span class="chip-label">PROCESSOR</span>
+                  <strong>μ<span>ARCH</span></strong>
+                  <span class="chip-sub">RISC-V · RV64</span>
+                </div>
+                <span class="chip-pin pin-a"></span><span class="chip-pin pin-b"></span>
+                <span class="chip-pin pin-c"></span><span class="chip-pin pin-d"></span>
+              </div>
+              <span class="art-tag tag-top">01 / INSTRUCTION</span>
+              <span class="art-tag tag-bottom">01 10 11 00</span>
+              <span class="art-dot dot-one"></span><span class="art-dot dot-two"></span>
+              <span class="art-dot dot-three"></span>
+            </div>
+            <div class="hero-index"><span>01</span> / 12</div>
+          </section>
+
+          <section class="stats-grid" aria-label="Tổng quan giáo trình">
+            <article class="stat-card">
+              <span class="stat-icon mint">◫</span>
+              <div><div class="stat-label">MÔ-ĐUN HỌC TẬP</div><strong>12 <small>chương</small></strong></div>
+              <span class="stat-foot">Từ nền tảng đến chuyên sâu</span>
+            </article>
+            <article class="stat-card">
+              <span class="stat-icon violet">⌁</span>
+              <div><div class="stat-label">THỜI LƯỢNG GỢI Ý</div><strong>48 <small>giờ</small></strong></div>
+              <span class="stat-foot">4 giờ mỗi tuần · 12 tuần</span>
+            </article>
+            <article class="stat-card">
+              <span class="stat-icon orange">◇</span>
+              <div><div class="stat-label">ĐỒ ÁN CUỐI KHÓA</div><strong>01 <small>dự án</small></strong></div>
+              <span class="stat-foot">Thiết kế CPU RISC-V thu nhỏ</span>
+            </article>
+            <article class="stat-card progress-stat">
+              <span class="stat-icon blue">↗</span>
+              <div><div class="stat-label">TIẾN ĐỘ CỦA BẠN</div><strong id="overview-progress-label">0<small>%</small></strong></div>
+              <div class="mini-progress"><span id="overview-progress-bar"></span></div>
+            </article>
+          </section>
+
+          <section class="curriculum-section" id="curriculum">
+            <div class="section-heading">
+              <div>
+                <div class="eyebrow section-eyebrow"><span class="eyebrow-line"></span> BẢN ĐỒ KIẾN THỨC</div>
+                <h2>Giáo trình <span>của bạn.</span></h2>
+                <p class="section-description">Đi từng bước, kết nối từng lớp — từ cổng logic đến kiến trúc hiện đại.</p>
+              </div>
+              <div class="curriculum-tools">
+                <label class="search-box">
+                  <span aria-hidden="true">⌕</span>
+                  <input id="search-input" type="search" placeholder="Tìm chủ đề..." aria-label="Tìm chủ đề trong giáo trình" />
+                  <kbd>⌘ K</kbd>
+                </label>
+                <label class="filter-wrap">
+                  <span class="visually-hidden">Lọc theo trình độ</span>
+                  <select id="level-filter">
+                    <option value="all">Tất cả cấp độ</option>
+                    <option value="Nền tảng">Nền tảng</option>
+                    <option value="Trung cấp">Trung cấp</option>
+                    <option value="Nâng cao">Nâng cao</option>
+                  </select>
+                </label>
+              </div>
+            </div>
+
+            <div class="curriculum-layout">
+              <div class="module-list" id="module-list" aria-live="polite"></div>
+              <aside class="detail-panel" id="detail-panel" aria-live="polite">
+                <div class="detail-placeholder">
+                  <span class="placeholder-icon">⌘</span>
+                  <strong>Chọn một mô-đun</strong>
+                  <p>Chọn bất kỳ chương nào để xem mục tiêu, nội dung và hoạt động thực hành.</p>
+                </div>
+              </aside>
+            </div>
+            <p class="empty-state" id="empty-state" hidden>Không tìm thấy chủ đề phù hợp. Hãy thử từ khóa hoặc cấp độ khác.</p>
+          </section>
+
+          <section class="roadmap-section" id="roadmap">
+            <div class="roadmap-heading">
+              <div>
+                <div class="eyebrow section-eyebrow"><span class="eyebrow-line"></span> HÀNH TRÌNH 12 TUẦN</div>
+                <h2>Từ câu hỏi <span>đến kiến tạo.</span></h2>
+              </div>
+              <p>Mỗi chặng xây trên kiến thức đã có — học để hiểu, thực hành để nhớ, dự án để kết nối.</p>
+            </div>
+            <div class="roadmap-track">
+              <article class="roadmap-stage">
+                <span class="stage-number">01</span><span class="stage-line"></span>
+                <div class="stage-period">TUẦN 01—03</div><h3>Nền móng</h3>
+                <p>Logic số, biểu diễn dữ liệu, ISA và cách chương trình trở thành lệnh máy.</p>
+                <span class="stage-modules">MÔ-ĐUN 01—03</span>
+              </article>
+              <article class="roadmap-stage">
+                <span class="stage-number">02</span><span class="stage-line"></span>
+                <div class="stage-period">TUẦN 04—06</div><h3>Bộ xử lý</h3>
+                <p>Datapath, pipeline và các kỹ thuật cải thiện hiệu năng của CPU.</p>
+                <span class="stage-modules">MÔ-ĐUN 04—06</span>
+              </article>
+              <article class="roadmap-stage">
+                <span class="stage-number">03</span><span class="stage-line"></span>
+                <div class="stage-period">TUẦN 07—09</div><h3>Phân cấp bộ nhớ</h3>
+                <p>Cache, bộ nhớ ảo, lưu trữ và sự phối hợp giữa các tầng bộ nhớ.</p>
+                <span class="stage-modules">MÔ-ĐUN 07—09</span>
+              </article>
+              <article class="roadmap-stage">
+                <span class="stage-number">04</span><span class="stage-line"></span>
+                <div class="stage-period">TUẦN 10—12</div><h3>Kiến trúc tương lai</h3>
+                <p>Đa lõi, GPU, bảo mật và đồ án CPU RISC-V tích hợp.</p>
+                <span class="stage-modules">MÔ-ĐUN 10—12</span>
+              </article>
+            </div>
+          </section>
+
+          <section class="resources-section" id="resources">
+            <div class="resources-heading">
+              <div>
+                <div class="eyebrow section-eyebrow"><span class="eyebrow-line"></span> ĐỌC THÊM · THỰC HÀNH</div>
+                <h2>Bộ công cụ <span>người học.</span></h2>
+              </div>
+              <span class="resources-caption">Tài nguyên tham khảo uy tín</span>
+            </div>
+            <div class="resource-grid">
+              <a class="resource-card" href="https://riscv.org/technical/specifications/" target="_blank" rel="noreferrer">
+                <span class="resource-type">ĐẶC TẢ CHUẨN</span><span class="resource-arrow">↗</span>
+                <strong>RISC-V Specifications</strong>
+                <p>Đặc tả kiến trúc tập lệnh mở RISC-V từ tổ chức RISC-V International.</p>
+                <span class="resource-link">riscv.org <span>↗</span></span>
+              </a>
+              <a class="resource-card" href="https://cs61c.org/" target="_blank" rel="noreferrer">
+                <span class="resource-type">KHÓA HỌC</span><span class="resource-arrow">↗</span>
+                <strong>Berkeley CS 61C</strong>
+                <p>Tổ chức máy tính, hợp ngữ RISC-V, CPU, bộ nhớ và tính toán song song.</p>
+                <span class="resource-link">cs61c.org <span>↗</span></span>
+              </a>
+              <a class="resource-card" href="https://www.nand2tetris.org/" target="_blank" rel="noreferrer">
+                <span class="resource-type">HỌC QUA DỰ ÁN</span><span class="resource-arrow">↗</span>
+                <strong>Nand2Tetris</strong>
+                <p>Xây dựng máy tính hoàn chỉnh từng lớp, từ cổng logic đến phần mềm.</p>
+                <span class="resource-link">nand2tetris.org <span>↗</span></span>
+              </a>
+              <a class="resource-card" href="https://www.coursera.org/learn/comparch" target="_blank" rel="noreferrer">
+                <span class="resource-type">BÀI GIẢNG</span><span class="resource-arrow">↗</span>
+                <strong>Princeton · Architecture</strong>
+                <p>Khóa học nhập môn về kiến trúc máy tính và thiết kế bộ xử lý.</p>
+                <span class="resource-link">coursera.org <span>↗</span></span>
+              </a>
+            </div>
+          </section>
+
+          <footer class="footer">
+            <a class="footer-brand" href="#home">ARCH<span>LAB</span></a>
+            <p>Một giáo trình mở dành cho người muốn hiểu máy tính từ bên trong.</p>
+            <a href="#home" class="back-top">LÊN ĐẦU TRANG ↑</a>
+          </footer>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

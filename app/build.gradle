@@ -1,0 +1,16 @@
+plugins {
+    id "com.android.application"
+}
+
+android {
+    namespace "vn.archlab.app"
+    compileSdk 35
+
+    defaultConfig {
+        applicationId "vn.archlab.app"
+        minSdk 23
+        targetSdk 34
+        versionCode 1
+        versionName "1.0.0"
+    }
+}
